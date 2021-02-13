@@ -57,3 +57,34 @@ Widget myIcon(icon, size, count) {
     ],
   );
 }
+
+Widget myAlbum(albumImg) {
+  return Container(
+    width: 55,
+    height: 55,
+    child: Stack(
+      children: [
+        Center(
+          child: Container(
+            height: 50,
+            width: 50,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.grey[700],
+            ),
+          ),
+        ),
+        Center(
+          child: Container(
+            height: 30,
+            width: 30,
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                    image: NetworkImage(albumImg), fit: BoxFit.cover)),
+          ),
+        ),
+      ],
+    ),
+  );
+}

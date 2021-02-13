@@ -15,7 +15,7 @@ class BottomDetailsPanel extends StatelessWidget {
       height: size.height,
       width: size.width * 0.8,
       decoration: BoxDecoration(
-        color: Colors.blue,
+        color: Colors.black,
       ),
       child: Padding(
         padding: const EdgeInsets.only(bottom: 20, left: 10),

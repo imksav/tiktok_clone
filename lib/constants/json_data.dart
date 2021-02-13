@@ -1,7 +1,7 @@
 List items = [
   {
     "videoUrl": "assets/videos/video_1.mp4",
-    "name": "@imksav🦋",
+    "name": "@imksav",
     "caption":
         "This is my own tiktok clone app developed by myself while learning flutter.",
     "songName": "original sound - Narayan Gopal",
