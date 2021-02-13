@@ -1,9 +1,9 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:tiktok_clone/constants/json_data.dart';
 import 'package:tiktok_clone/widgets/bottom_details_panel.dart';
 import 'package:tiktok_clone/widgets/header_homepage.dart';
+import 'package:tiktok_clone/widgets/icons_widget_homepage.dart';
+import 'package:tiktok_clone/widgets/tiktok_icons.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -47,25 +47,26 @@ class _HomePageState extends State<HomePage> {
                           Expanded(
                             child: Container(
                               height: size.height,
-                              // decoration: BoxDecoration(
-                              //   color: Colors.yellow,
-
-                              // ),
                               child: Column(
                                 children: [
                                   Container(height: size.height * 0.3),
                                   Expanded(
                                       child: Container(
                                     decoration: BoxDecoration(
-                                      color: Colors.pink,
+                                      color: Colors.black,
                                     ),
                                     child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
                                       children: [
-                                        Column(
-                                          children: [
-                                            myProfile(),
-                                          ],
-                                        )
+                                        myProfileIcon(items[0]["profileImg"]),
+                                        myIcon(TikTokIcons.heart, 35.0,
+                                            items[0]["likes"]),
+                                        myIcon(TikTokIcons.chat_bubble, 35.0,
+                                            items[0]["comments"]),
+                                        myIcon(TikTokIcons.share, 35.0,
+                                            items[0]["shares"]),
+                                        myAlbum(items[0]["albumImg"]),
                                       ],
                                     ),
                                   ))
@@ -86,22 +87,32 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget myProfile() {
+  Widget myAlbum(albumImg) {
     return Container(
       width: 55,
       height: 55,
       child: Stack(
         children: [
-          Container(
-            height: 50,
-            width: 50,
-            decoration: BoxDecoration(
-                color: Colors.green,
+          Center(
+            child: Container(
+              height: 50,
+              width: 50,
+              decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                image: DecorationImage(
-                    image: NetworkImage(items[0]["profileImg"]),
-                    fit: BoxFit.cover)),
-          )
+                color: Colors.grey[700],
+              ),
+            ),
+          ),
+          Center(
+            child: Container(
+              height: 30,
+              width: 30,
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                      image: NetworkImage(albumImg), fit: BoxFit.cover)),
+            ),
+          ),
         ],
       ),
     );

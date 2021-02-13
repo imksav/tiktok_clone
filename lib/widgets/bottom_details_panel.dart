@@ -18,7 +18,7 @@ class BottomDetailsPanel extends StatelessWidget {
         color: Colors.blue,
       ),
       child: Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(bottom: 20, left: 10),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,10 +37,11 @@ class BottomDetailsPanel extends StatelessWidget {
                   fontSize: 18,
                   fontWeight: FontWeight.normal),
             ),
+            SizedBox(height: 10),
             Row(
               children: [
                 Icon(
-                  Icons.music_note,
+                  Icons.music_note_rounded,
                   color: Colors.white,
                 ),
                 Text(
